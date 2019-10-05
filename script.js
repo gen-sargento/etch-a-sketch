@@ -22,8 +22,10 @@ function Cell() {
     this.cell = document.createElement('div');
     this.hue = Math.floor(Math.random() * 360);
     this.lightness = 100;
+    this.darken = function() {
+        this.lightness -=10;
+    }
     this.makeColor = function() {
-        this.lightness -= 10;
         return 'hsla(' + this.hue + ',' + 100 + '%,' + this.lightness + '%' + ',' + 1.0 + ')';
     }
 }
@@ -38,6 +40,7 @@ for(let i = 0; i < size; i++) {
         square.addEventListener('mouseover',(e) => {
             console.log(newCell.makeColor());
                square.style.backgroundColor = newCell.makeColor();
+               newCell.darken();
          
       
     });
@@ -56,3 +59,4 @@ for(let i = 0; i < size; i++) {
 createGrid(16);
 
 
+git
