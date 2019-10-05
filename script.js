@@ -4,7 +4,6 @@ const resetButton = document.querySelector('#reset-button');
 let lbreak = document.createElement('br');
 let size = 16;
 resetButton.addEventListener('click', (e) => {
-    
     size = prompt('How many squares per side?');
     removeGrid();
     createGrid(size);
@@ -21,7 +20,7 @@ function removeGrid() {
 function Cell() {
     this.cell = document.createElement('div');
     this.hue = Math.floor(Math.random() * 360);
-    this.lightness = 100;
+    this.lightness = 90;
     this.darken = function() {
         this.lightness -=10;
     }
@@ -34,29 +33,21 @@ for(let i = 0; i < size; i++) {
     let gridRow = document.createElement('div');
     for(let j = 0; j < size; j++) {
         let newCell = new Cell();
-       
         let square = new Cell().cell;
         square.classList.add('grid');
         square.addEventListener('mouseover',(e) => {
-            console.log(newCell.makeColor());
-               square.style.backgroundColor = newCell.makeColor();
-               newCell.darken();
+            square.style.backgroundColor = newCell.makeColor();
+            newCell.darken();
          
       
     });
-    gridRow.classList.add('grid-row');
-  
-   
-    gridRow.appendChild(square);
+        gridRow.classList.add('grid-row'); 
+        gridRow.appendChild(square);
   
     }
-
-    gridWrapper.appendChild(gridRow);
-
-    
+    gridWrapper.appendChild(gridRow); 
 }
 }
 createGrid(16);
 
 
-git
