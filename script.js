@@ -16,17 +16,34 @@ function removeGrid() {
         console.log('hahahahaha');  
     }
 }
+
+
+function Cell() {
+    this.cell = document.createElement('div');
+    this.hue = Math.floor(Math.random() * 360);
+    this.lightness = 100;
+    this.makeColor = function() {
+        this.lightness -= 10;
+        return 'hsla(' + this.hue + ',' + 100 + '%,' + this.lightness + '%' + ',' + 1.0 + ')';
+    }
+}
 function createGrid(size) {
 for(let i = 0; i < size; i++) {
     let gridRow = document.createElement('div');
     for(let j = 0; j < size; j++) {
+        let newCell = new Cell();
        
-        let square = document.createElement('div');
+        let square = new Cell().cell;
         square.classList.add('grid');
         square.addEventListener('mouseover',(e) => {
-        square.classList.add('change-color');
+            console.log(newCell.makeColor());
+               square.style.backgroundColor = newCell.makeColor();
+         
+      
     });
     gridRow.classList.add('grid-row');
+  
+   
     gridRow.appendChild(square);
   
     }
@@ -37,3 +54,5 @@ for(let i = 0; i < size; i++) {
 }
 }
 createGrid(16);
+
+

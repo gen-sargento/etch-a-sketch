@@ -14,6 +14,7 @@
 .grid-row {
     display: flex;
     flex-direction: row;
+    position: relative;
            
 }
 .grid {
@@ -21,13 +22,26 @@
     border: 1px solid black;
     width: 30px;
     height: 30px;
+}
+.absolute {
+    position: absolute; 
+    background-color: red;  
+}
+.absolute-grid {
+    position:absolute;
+    background-color:red;
     
-
-
+}
+.absolute-grid-row {
+    position: absolute;
 }
 .change-color {
-    background-color:black;
+    background-color: green;
 }
 #reset-button {
     margin-top: 19px;
 }
+.top {
+    top: 106px;
+}
+
