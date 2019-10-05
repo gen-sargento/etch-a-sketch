@@ -12,7 +12,7 @@ resetButton.addEventListener('click', (e) => {
 function removeGrid() {
     while(gridWrapper.firstChild) {
         gridWrapper.removeChild(gridWrapper.firstChild);
-        console.log('hahahahaha');  
+         
     }
 }
 
